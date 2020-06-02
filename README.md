@@ -54,7 +54,7 @@ For running ANNOVAR, we need to have Perl installed in the computer. You can do 
 
 ### 1. Install ANNOVAR dependent packages
 
-There are several steps to run ANNOVAR. Firstly, you need to download the ANNOVAR from `https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/`. You need the registration and then you will receive any email to download it. Secondly, you need to install 7-zip so that you can untar the ANNOVAR.tar.gz. Thirdly, to run ANNOVAR directly, we need to associate `.pl` file with `perl`. Right click `Annocoda "Powershell prompt` and then run it as administrator. In the command, run the following two commands
+There are several steps to run ANNOVAR. Firstly, you need to download the ANNOVAR from `https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/`. You need the registration and then you will receive any email to download it. If users use `Annoconda Powershell prompt`, you can dirctly using `tar -xvf ANNOVAR.tar.gz` to untar the downladed file, and then go next section to run ANNOVAR; if users use `Annoconda prompt`, please go to next step. Secondly, you need to install 7-zip so that you can untar the ANNOVAR.tar.gz. Thirdly, to run ANNOVAR directly, we need to associate `.pl` file with `perl`. Right click `Annoconda prompt` and then run it as administrator. In the command, run the following two commands
 ```
 assoc .pl=PerlScript
 ftype PerlScript=C:\Users\%USERNAME%\Anaconda3\pkgs\perl-5.26.2.1-h0c8e037_0\Library\bin\perl.exe "%1" %*
