@@ -67,12 +67,12 @@ If your installation folder of perl is different from the perl path above, pleas
 
 We need to download some DB for ANNOVAR. Users can find more db [here](https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/#-for-filter-based-annotation)
 ```
-annotate_variation.pl -buildver hg19 -downdb -webfrom annovar gnomad211_genome  humandb/ 
-annotate_variation.pl -buildver hg19 -downdb -webfrom annovar 1000g2015aug   humandb/ 
+annotate_variation.pl -buildver hg19 -downdb -webfrom annovar gnomad211_exome  humandb/ 
+annotate_variation.pl -buildver hg19 -downdb -webfrom annovar dbnsfp35a   humandb/ 
 ```
 
 ```
-table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remove -protocol refGene,gnomad211_genome,1000g2015aug -operation g,f,f -nastring . -vcfinput -polish
+table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remove -protocol refGene,gnomad211_exome,dbnsfp35a -operation g,f,f -nastring . -vcfinput -polish
 ```
 After that, you will find the result files whose filenames starts with `myanno`
 
