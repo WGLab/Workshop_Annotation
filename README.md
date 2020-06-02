@@ -120,9 +120,9 @@ Then extract either with 7zip, WinRAR or
 unzip H2GKB.zip -d H2GKB
 ```
 
-### Run Phen2Gene (from Phen2Gene github)
+### Run Phen2Gene
 
-If on Windows, you will have to use `-d full_path_to_H2GKBs.zip_extraction_folder`.  This means wherever you decided to download and unzip `H2GKBs.zip` to, you have to add that path to each use of `phen2gene.py` as below:
+If on Windows, you will have to use `-d full_path_to_H2GKBs.zip_extraction_folder`.  This means wherever you decided to download and unzip `H2GKB.zip` to, you have to add that path to each use of `phen2gene.py` as below:
 
 1. Input HPO IDs via input file (typical use case)
 
