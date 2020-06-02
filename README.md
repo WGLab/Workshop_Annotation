@@ -95,7 +95,12 @@ And then they can git clone:
 ```
 git clone https://github.com/WGLab/Phen2Gene.git
 cd Phen2Gene
-conda env create -f environment.yml #(please remove readline, ncurses)
+```
+
+To create your environment (necessary for *ALL* operating systems):
+
+```
+conda env create -f environment.yml
 conda activate phen2gene
 ```
 
