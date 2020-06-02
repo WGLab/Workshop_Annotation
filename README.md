@@ -85,17 +85,14 @@ Then extract either with 7zip, WinRAR or
 unzip Phen2Gene.zip -d Phen2Gene
 ```
 
-To download Phen2Gene from github, users can to install git using the command below.
+If you are more experienced, and you want to download Phen2Gene from github, users can install git using the command below and git clone.
 ```
 conda install git
-```
-
-And then they can git clone:
-
-```
 git clone https://github.com/WGLab/Phen2Gene.git
 cd Phen2Gene
 ```
+
+### Running environment for Phen2Gene
 
 To create your environment (necessary for *ALL* operating systems):
 
