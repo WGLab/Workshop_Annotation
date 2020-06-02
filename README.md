@@ -92,7 +92,17 @@ bash setup.sh
 ```
 And the installation will be extremely easy for you.  The database and all will be downloaded and you can install P2G in your path.
 
-If on `Windows` it is best to download the database from https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip and unzip it.
+If on `Windows`:
+
+```
+wget https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip -O H2GKBs.zip
+```
+
+Then extract either with 7zip, WinRAR or
+
+```
+unzip H2GKB.zip -d H2GKB
+```
 
 ### Run Phen2Gene (from Phen2Gene github)
 
