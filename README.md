@@ -1,4 +1,4 @@
-# Workshop_Annotation
+# Introduction
 This repository contains the course materials for hands-on exercise session of the "Variants Annotate and Phenotype Analysis" workshop. 
 
 # Preparation of computing environment
