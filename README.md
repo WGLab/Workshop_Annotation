@@ -44,6 +44,11 @@ Next, we will enter the new environment that was just created to perform the exe
 
 You can see that the `(base)` in command prompt is changed to `(annotation)` indicating that we are now in a different environment.
 
+For running ANNOVAR, we need to have Perl installed in the computer. You can do `conda install perl`, and press "y" when prompted. See image below.
+
+![conda perl](img/conda_perl.png)
+
+
 
 
 
