@@ -75,7 +75,7 @@ One need to install Phen2Gene using the command below. Please deactivate other c
 
 To download Phen2Gene from github, users need to install git using the command below.
 ```
-conda install -c anaconda git
+conda install git
 ```
 
 ```
@@ -85,37 +85,61 @@ conda env create -f environment.yml #(please remove readline, ncurses)
 conda activate phen2gene
 ```
 
-After that, download the database from https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip and unzip it. You need to copy unzip folder to `lib/h2gpath.config` under Phen2Gen folder.
+After that, download the database from https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip and unzip it.
 
 ### Run Phen2Gene (from Phen2Gene github)
 
+If on Windows, you will have to use `-d full_path_to_H2GKBs.zip_extraction_folder`.  This means wherever you decided to download and unzip `H2GKBs.zip` to, you have to add that path to each use of `phen2gene.py` as below:
+
 1. Input HPO IDs via input file (typical use case)
+Unix (mac or linux):
 ```
 python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist
 ```
-2. Input HPO IDs via input file, and candidate gene list file (another common use case)
+Windows, add `-d`:
 ```
-python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -d example/1000genetest.txt
+python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -d full_path_to_H2GKBs.zip_extraction_folder
+```
+2. Input HPO IDs via input file, and candidate gene list file (another common use case)
+Unix (mac or linux):
+```
+python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -l example/1000genetest.txt
+```
+Windows, use:
+```
+python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -l example/1000genetest.txt -d full_path_to_H2GKBs.zip_extraction_folder
 ```
 3. Use Skewness and Information Content
 
   * `-w sk` uses a skewness-based weighting of genes for each HPO term (default, and recommended)
   * `-w w` and `-w ic` do not use skew, but utilize information content in the tree structure (slightly worse performance)
   * `-w u` is unweighted
-
+Unix (mac or linux):
 ```
 python phen2gene.py -f example/HPO_sample.txt -w sk -out out/prioritizedgenelist
 ```
+Windows, use:
+```
+python phen2gene.py -f example/HPO_sample.txt -w sk -out out/prioritizedgenelist -d full_path_to_H2GKBs.zip_extraction_folder
+```
 4. Run Phen2Gene with verbose messages
+Unix (mac or linux):
 ```
 python phen2gene.py -f example/HPO_sample.txt -v -out out/prioritizedgenelist
 ```
+Windows, use:
+```
+python phen2gene.py -f example/HPO_sample.txt -v -out out/prioritizedgenelist -d full_path_to_H2GKBs.zip_extraction_folder
+```
 5. Input HPO IDs manually, if desired
+Unix (mac or linux):
 ```
 python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prioritizedgenelist
 ```
-
-
+Windows, use:
+```
+python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prioritizedgenelist -d full_path_to_H2GKBs.zip_extraction_folder
+```
 
 
 
