@@ -85,6 +85,13 @@ conda env create -f environment.yml #(please remove readline, ncurses)
 conda activate phen2gene
 ```
 
+If on `MacOS` or `Linux` run:
+
+```
+bash setup.sh
+```
+And the installation will be extremely easy for you.  The database and all will be downloaded and you can install P2G in your path.
+
 After that, download the database from https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip and unzip it.
 
 ### Run Phen2Gene (from Phen2Gene github)
