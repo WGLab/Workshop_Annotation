@@ -95,7 +95,7 @@ And the installation will be extremely easy for you.  The database and all will 
 If on `Windows`:
 
 ```
-wget https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip -O H2GKBs.zip
+wget https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip -O H2GKB.zip
 ```
 
 Then extract either with 7zip, WinRAR or
