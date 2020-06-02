@@ -54,7 +54,7 @@ For running ANNOVAR, we need to have Perl installed in the computer. You can do 
 
 ### 1. Install ANNOVAR dependent packages
 
-There are several steps to run ANNOVAR. Firstly, you need to download the ANNOVAR from `https://github.com/WGLab/Workshop_Annotation/releases/edit/v1.0.0`. Within Annoconda Powershell prompt, you can dirctly using `tar -xvf annovar.latest.tar.gz` to untar the downladed file, and then go next section to run ANNOVAR.
+There are several steps to run ANNOVAR. Firstly, you need to download the ANNOVAR from `https://github.com/WGLab/Workshop_Annotation/releases/edit/v1.0.0`. Within Anaconda Powershell prompt, you can dirctly using `tar -xvf annovar.latest.tar.gz` to untar the downladed file, and then go next section to run ANNOVAR.
 
 ### 2. Run ANNOVAR
 
@@ -81,7 +81,7 @@ conda install -c anaconda git
 ```
 git clone https://github.com/WGLab/Phen2Gene.git
 cd Phen2Gene
-conda env create -f environment.yml #(I remove readline, ncurses)
+conda env create -f environment.yml #(please remove readline, ncurses)
 conda activate phen2gene
 ```
 
