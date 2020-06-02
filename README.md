@@ -54,14 +54,14 @@ For running ANNOVAR, we need to have Perl installed in the computer. You can do 
 
 ### 1. Install ANNOVAR dependent packages
 
-There are several steps to run ANNOVAR. Firstly, you need to download the ANNOVAR from `https://github.com/WGLab/Workshop_Annotation/releases/edit/v1.0.0`. Within Annoconda Powershell prompt, you can dirctly using `tar -xvf annovar.latest.tar.gz` to untar the downladed file, and then go next section to run ANNOVAR; 
+There are several steps to run ANNOVAR. Firstly, you need to download the ANNOVAR from `https://github.com/WGLab/Workshop_Annotation/releases/edit/v1.0.0`. Within Annoconda Powershell prompt, you can dirctly using `tar -xvf annovar.latest.tar.gz` to untar the downladed file, and then go next section to run ANNOVAR.
 
 ### 2. Run ANNOVAR
 
-We need to download some DB for ANNOVAR. Users can find more db [here](https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/#-for-filter-based-annotation)
+We need to download some annotation databases for ANNOVAR. Type `cd annovar` to enter the `annovar` directory. (Note that users can find more databases [here](https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/#-for-filter-based-annotation).
 ```
-annotate_variation.pl -buildver hg19 -downdb -webfrom annovar gnomad211_exome  humandb/ 
-annotate_variation.pl -buildver hg19 -downdb -webfrom annovar dbnsfp35a   humandb/ 
+perl annotate_variation.pl -buildver hg19 -downdb -webfrom annovar gnomad211_exome  humandb/ 
+perl annotate_variation.pl -buildver hg19 -downdb -webfrom annovar dbnsfp35a   humandb/ 
 ```
 
 ```
