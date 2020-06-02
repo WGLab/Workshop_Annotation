@@ -79,6 +79,12 @@ After that, you will find the result files whose filenames starts with `myanno`
 ## Install Phen2Gene
 
 One need to install Phen2Gene using the command below. Please deactivate other conda environments if you are not in conda base.
+
+To download Phen2Gene from github, users need to install git using the command below.
+```
+conda install -c anaconda git
+```
+
 ```
 git clone https://github.com/WGLab/Phen2Gene.git
 cd Phen2Gene
