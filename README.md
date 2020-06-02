@@ -28,14 +28,21 @@ Since MacOS has built-in terminal and Linux-like enrivonment for executing comma
 
 Click "CMD.ext prompt" or "Powershell prompt", and you will see a terminal that has "(base) C:\Users\Kai Wang>" as the prompt.
 
-We will create an environment called "annotation" to use for the variants annotation and phenotype analysis. 
+By default, we will start in a `base` environment. For this course, we will create an environment called "annotation" to use for the variants annotation and phenotype analysis. 
 
 ```
 (base) C:\Users\Kai Wang>conda create --name annotation
 ```
 
+Next, we will enter the new environment that was just created to perform the exercise:
 
+```
+(base) C:\Users\Kai Wang>conda activate annotation
 
+(annotation) C:\Users\Kai Wang>
+```
+
+You can see that the `(base)` in command prompt is changed to `(annotation)` indicating that we are now in a different environment.
 
 
 
