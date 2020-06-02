@@ -26,6 +26,8 @@ Since MacOS has built-in terminal and Linux-like enrivonment for executing comma
 
 # Installation of software tools and data sets
 
+## Install Perl
+
 Click "CMD.ext prompt" or "Powershell prompt", and you will see a terminal that has "(base) C:\Users\Kai Wang>" as the prompt.
 
 By default, we will start in a `base` environment. For this course, we will create an environment called "annotation" to use for the variants annotation and phenotype analysis. 
@@ -47,6 +49,10 @@ You can see that the `(base)` in command prompt is changed to `(annotation)` ind
 For running ANNOVAR, we need to have Perl installed in the computer. You can do `conda install perl`, and press "y" when prompted. See image below.
 
 ![conda perl](img/conda_perl.png)
+
+## Install ANNOVAR
+
+
 
 
 
