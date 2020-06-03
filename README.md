@@ -122,7 +122,7 @@ unzip H2GKB.zip -d H2GKB
 
 ### Run Phen2Gene
 
-If on Windows, you will have to use `-d full_path_to_H2GKBs.zip_extraction_folder`.  This means wherever you decided to download and unzip `H2GKB.zip` to, you have to add that path to each use of `phen2gene.py` as below:
+If on Windows, you will have to use `-d full_path_to_H2GKB.zip_extraction_folder`.  This means wherever you decided to download and unzip `H2GKB.zip` to, you have to add that path to each use of `phen2gene.py` as below:
 
 1. Input HPO IDs via input file (typical use case)
 
@@ -132,43 +132,9 @@ python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist
 ```
 Windows, add `-d`:
 ```
-python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -d full_path_to_H2GKBs.zip_extraction_folder
+python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -d full_path_to_H2GKB.zip_folder
 ```
-2. Input HPO IDs via input file, and candidate gene list file (another common use case)
-
-Unix (mac or linux):
-```
-python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -l example/1000genetest.txt
-```
-Windows, use:
-```
-python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -l example/1000genetest.txt -d full_path_to_H2GKBs.zip_extraction_folder
-```
-3. Use Skewness and Information Content
-
-  * `-w sk` uses a skewness-based weighting of genes for each HPO term (default, and recommended)
-  * `-w w` and `-w ic` do not use skew, but utilize information content in the tree structure (slightly worse performance)
-  * `-w u` is unweighted
-  
-Unix (mac or linux):
-```
-python phen2gene.py -f example/HPO_sample.txt -w sk -out out/prioritizedgenelist
-```
-Windows, use:
-```
-python phen2gene.py -f example/HPO_sample.txt -w sk -out out/prioritizedgenelist -d full_path_to_H2GKBs.zip_extraction_folder
-```
-4. Run Phen2Gene with verbose messages
-
-Unix (mac or linux):
-```
-python phen2gene.py -f example/HPO_sample.txt -v -out out/prioritizedgenelist
-```
-Windows, use:
-```
-python phen2gene.py -f example/HPO_sample.txt -v -out out/prioritizedgenelist -d full_path_to_H2GKBs.zip_extraction_folder
-```
-5. Input HPO IDs manually, if desired
+2. Input HPO IDs manually, if desired
 
 Unix (mac or linux):
 ```
@@ -176,8 +142,11 @@ python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prio
 ```
 Windows, use:
 ```
-python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prioritizedgenelist -d full_path_to_H2GKBs.zip_extraction_folder
+python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prioritizedgenelist -d full_path_to_H2GKB.zip_folder
 ```
+
+### A real world use case of Phen2Gene using ANNOVAR
+
 
 
 
