@@ -130,9 +130,10 @@ bash setup.sh
 ```
 And the installation will be extremely easy for you.  The database and all will be downloaded and you can add Phen2Gene in your path.
 
-If on `Windows`:
+If on `Windows`, go to the `lib/` directory and download the knowledgebase file:
 
 ```
+cd lib
 wget https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip -O H2GKB.zip
 ```
 
@@ -144,7 +145,7 @@ Then extract the file:
 tar -xvf H2GKB.zip
 ```
 
-*We recommend extracting the file into lib for ease of use for this tutorial, but you can put the file wherever you want.*
+*We recommend extracting the file into `lib` directory for ease of use for this tutorial, but you can put the file wherever you want.*
 
 ### Run Phen2Gene
 
