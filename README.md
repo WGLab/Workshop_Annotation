@@ -143,6 +143,26 @@ python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prio
 
 ### A real world use case of Phen2Gene using ANNOVAR
 
+We're going to get actual variants from a proband with developmental disease from a CSH Molecular Case Studies paper.
 
+So first we download it.
 
+In the `ANNOVAR` folder:
+
+```
+wget http://molecularcasestudies.cshlp.org/content/suppl/2016/10/11/mcs.a001131.DC1/Supp_File_2_KBG_family_Utah_VCF_files.zip -O Supp2.zip
+perl annotate_variation.pl -buildver hg19 -downdb -webfrom annovar refGene humandb
+```
+
+UNIX (`Windows` users, just unzip here, and *rename folder to `VCF_files`*):
+
+```
+unzip Supp_File_2_KBG_family_Utah_VCF_files.zip -d VCF_files
+rm -rf __MACOSX; rm Supp_File_2_KBG_family_Utah_VCF_files.zip
+```
+
+Run ANNOVAR on the VCF file:
+```
+perl table_annovar.pl VCF_files/proband.vcf -buildver hg19 humandb -out proband.annovar -remove -protocol refGene,gnomad211_exome -operation g,f -nastring . -vcfinput
+```
 
