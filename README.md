@@ -128,7 +128,7 @@ If on Windows, and you do not have the space to download and extract the `H2GKB.
 
 1. Input HPO IDs via input file (typical use case)
 
-Unix (mac or linux, or Windows if you added H2GKB to lib):
+Default command:
 ```
 python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist
 ```
