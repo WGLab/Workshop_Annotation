@@ -5,32 +5,35 @@ This repository contains the course materials for hands-on exercise session of t
 Both the lectures and hands-on exercises will be taught via video conference online. To ensure the cross-platform compatibility, we will only use tools that are developed in Perl and Python. As most users are using either Windows or MacOS in your personal computers, below we describe the preferred means to prepare computing environment using Conda. 
 
 ## Windows
-The suggested way to perform the hands-on exercises is to install [Anaconda](https://www.anaconda.com/products/individual), which is an open source, flexible solution that provides the utilities to build, distribute, install, update, and manage software in a cross-platform manner. Note that the Windows versions of several widely graphical user interface (GUI) packages, including Jupyter Notebook and Spyder, are already included within Anaconda by default; additionally, Rstudio can be also installed by one-click installation within Anaconda Navigator.
+For some users, Conda is not strictly required if you are already familiar with running command-line driven software tools in Windows via WSL or PowerShell and have Perl/Python pre-installed in your Windows computer. So if you are among this group of users, you can skip this step and go directly to the exercises.
 
-Once you go to the website, click "Download" button (see image below), and then install in your Windows computer by accpeting all default options.
+For other users, the suggested way to perform the hands-on exercises is to install [Anaconda](https://www.anaconda.com/products/individual), which is an open source, flexible solution that provides the utilities to build, distribute, install, update, and manage software in a cross-platform manner. Note that the Windows versions of several widely graphical user interface (GUI) packages, including Jupyter Notebook and Spyder, are already included within Anaconda by default; additionally, Rstudio can be also installed by one-click installation within Anaconda Navigator.
+
+Once you go to the website, click "Download" button (see image below), and then install in your Windows computer by accepting all default options.
 
 ![Anaconda Installation](img/anaconda.png)
 
 
-Once installation is successful, you can launch the Anaconda Navigator, and see the interface below.
+Once installation is successful, you can click the lower left "Start" button in Windows, then go to "Anaconda3" menu, then launch the "Anaconda Navigator". You will see the interface below.
 
 ![Anaconda Navigator](img/navigator.png)
 
-Of course, for some users, Conda is not strictly required if you are already familiar with running command-line driven software tools in Windows via WSL or PowerShell and has Perl/Python pre-installed in your Windows computer. So if you are among this group of users, you can skip this step and go directly to the exercises itself.
 
 
 
 ## MacOS
-Since MacOS has built-in terminal and Linux-like enrivonment for executing command-line software tools, in general you do not need any specific set up. However, you may want to install [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html).
+Since MacOS has built-in terminal and Linux-like enrivonment for executing command-line software tools, in general you do not need any specific set up. However, you may want to install [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) to help manage dependencies and the computing environment.
 
 
 # Installation of software tools and data sets
 
 ## Install Perl
 
-Click "CMD.ext prompt" or "Powershell prompt", and you will see a terminal that has "(base) C:\Users\Kai Wang>" as the prompt.
+If you are using Mac, not that Perl is already included as part of the MacOS. You can open a terminal window, and type `perl -v` to double check this. So you can skip this section.
 
-By default, we will start in a `base` environment. For this course, we will create an environment called "annotation" to use for the variants annotation and phenotype analysis. 
+If you are using Windows, note that Perl interpreter is not installed by default in most Windows computers. The annotation software (ANNOVAR) that we will use in this exercise is written in Perl, so we need to install an interpreter. This is where Conda can become very convenient. Within the Anaconda Navigator, click "Powershell prompt", and you will see a terminal that has "(base) C:\Users\Kai Wang>" as the prompt.
+
+By default, we start in a `base` environment within the Windows Powershell. For the exercise on variants annotation, we will create an environment called `annotation` to use for the variants annotation and phenotype analysis. 
 
 ```
 (base) C:\Users\Kai Wang>conda create --name annotation
@@ -46,28 +49,41 @@ Next, we will enter the new environment that was just created to perform the exe
 
 You can see that the `(base)` in command prompt is changed to `(annotation)` indicating that we are now in a different environment.
 
-For running ANNOVAR, we need to have Perl installed in the computer. You can do `conda install perl`, and press "y" when prompted. See image below.
+You can do `conda install perl`, and press "y" when prompted. See image below.
 
 ![conda perl](img/conda_perl.png)
 
+After installation, you can type `perl -v` to double check that Perl is indeed installed by the command above in the `annotation` environment. You should see a message like `This is perl 5, version 26, subversion 2 (v5.26.2) built for MSWin32-x64-multi-thread`.
+
+When using Windows, it is also highly recommended that you install the gzip-related tools (not required for this exercise itself, but useful if you want to explore more functionalities of ANNOVAR by downloading additing annotation packages). You can do `conda install -c msys2 m2-gzip` to install gzip.
+
+Now you can try switch back to the `base` environment (type `conda activate base` to do this), and type `perl -v`. You will see an error message now that this command is not recognized; in other words, Perl is only available in the `annotation` but not `base` environment. So this exercise shows how Conda manages software packages in an environment-dependent manner.
+
 ## Install ANNOVAR
 
-### 1. Install ANNOVAR dependent packages
+### 1. Install ANNOVAR
 
-There are several steps to run ANNOVAR. Firstly, you need to download the ANNOVAR from `https://github.com/WGLab/Workshop_Annotation/releases/edit/v1.0.0`. Within Anaconda Powershell prompt, you can dirctly using `tar -xvf annovar.latest.tar.gz` to untar the downladed file, and then go next section to run ANNOVAR.
+Typically you will go to the [ANNOVAR website](http://annovar.openbioinformatics.org), fill in a registration form, and download the package there. For this exercise, we already prepared a ZIP file that contains a "compact" version of ANNOVAR and necessary library files, to make it easier for users. If you are using Windows, make sure to switch to the `annotation` environment first, and by default you will be at your home directory. To make it easier to manage files and directories, we can create a new directory, then enter this new directory (type `mkdir genomics_exercise` followed by `cd genomics_exercise`).
 
-### 2. Run ANNOVAR
+Next, you can just download the ZIP file for this class by the command `wget -O exercise1.zip https://github.com/WGLab/Workshop_Annotation/releases/download/v1.0.0/exercise1.zip`. To unzip the file, you can dirctly using `tar -xvf exercise1.zip` to unzip the downladed file. You will see from the messages in screen that several files are extracted from the zip file.
 
-We need to download some annotation databases for ANNOVAR. Type `cd annovar` to enter the `annovar` directory. (Note that users can find more databases [here](https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/#-for-filter-based-annotation).
-```
-perl annotate_variation.pl -buildver hg19 -downdb -webfrom annovar gnomad211_exome  humandb/ 
-perl annotate_variation.pl -buildver hg19 -downdb -webfrom annovar dbnsfp35a   humandb/ 
-```
+### 2. Run ANNOVAR on a small VCF file
+
+Type `cd exercise1` to enter the `exercise1` directory. The sub-folder `humandb` folder already contains several annotation databases for human genome that we will use in our exercise. (Note that users can find more annotation databases [here](https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/#-for-filter-based-annotation).
+
 
 ```
-table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remove -protocol refGene,gnomad211_exome,dbnsfp35a -operation g,f,f -nastring . -vcfinput -polish
+perl table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remove -protocol refGeneWithVer,cytoBand,gnomad211_exome -operation g,r,f -nastring . -vcfinput -polish
 ```
-After that, you will find the result files whose filenames starts with `myanno`
+
+After that, you will find the result files whose filenames starts with `myanno`. 
+
+If you have Excel installed, you can open this hg19_multianno.txt file by Excel and examine the various fields.
+
+### 2. Run ANNOVAR on an exome
+
+Next, we want to download a VCF file and then run ANNOVAR on this file.
+
 
 ## Install Phen2Gene
 
