@@ -120,29 +120,25 @@ Then extract either with 7zip, WinRAR or
 unzip H2GKB.zip -d H2GKB
 ```
 
+*We recommend extracting the file into lib for ease of use for this tutorial, but you can put the file wherever you want.*
+
 ### Run Phen2Gene
 
-If on Windows, you will have to use `-d full_path_to_H2GKB.zip_extraction_folder`.  This means wherever you decided to download and unzip `H2GKB.zip` to, you have to add that path to each use of `phen2gene.py` as below:
+If on Windows, and you do not have the space to download and extract the `H2GKB.zip` in the `lib` folder (recommended default) you will have to use `-d full_path_to_H2GKB.zip_extraction_folder`.  This means wherever you decided to download and unzip `H2GKB.zip`, you have to add that path to each use of `phen2gene.py` as below:
 
 1. Input HPO IDs via input file (typical use case)
 
-Unix (mac or linux):
+Unix (mac or linux, or Windows if you added H2GKB to lib):
 ```
 python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist
 ```
-Windows, add `-d`:
+Alternate folder for H2GKB, add `-d`:
 ```
 python phen2gene.py -f example/HPO_sample.txt -out out/prioritizedgenelist -d full_path_to_H2GKB.zip_folder
 ```
 2. Input HPO IDs manually, if desired
-
-Unix (mac or linux):
 ```
 python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prioritizedgenelist
-```
-Windows, use:
-```
-python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prioritizedgenelist -d full_path_to_H2GKB.zip_folder
 ```
 
 ### A real world use case of Phen2Gene using ANNOVAR
