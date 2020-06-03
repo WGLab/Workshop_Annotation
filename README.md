@@ -181,3 +181,10 @@ conda install gawk
 awk '$11 <= 0.01 || $11 == "."' FS="\t" proband.annovar.hg19_multianno.txt > filtered.proband.annovar.hg19_multianno.txt
 ```
 
+Now using a `python` script that we pre-wrote in the `example` folder, we can create a newly sorted list of genes from `Phen2Gene` based on the genes with rare variants present in the `ANNOVAR` output:
+
+```
+python example/filterbyannovar.py -pre ankrd11/output_file.associated_gene_list -post ankrd11filter -anno filtered.proband.annovar.hg19_multianno.txt
+```
+
+Then view the newly created file `ankrd11filter` and note the top 10 genes, and our causal gene ANKRD11 at number 1.  It was previously number 2 if you check `ankrd11/output_file.associated_gene_list`.
