@@ -76,9 +76,11 @@ Type `cd exercise1` to enter the `exercise1` directory. The sub-folder `humandb`
 perl table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remove -protocol refGeneWithVer,cytoBand,gnomad211_exome -operation g,r,f -nastring . -vcfinput -polish
 ```
 
-After that, you will find the result files whose filenames starts with `myanno`. 
+After that, you will find the result files `myanno.hg19_multianno.txt` and `myanno.hg19_multianno.vcf`.
 
-If you have Excel installed, you can open this hg19_multianno.txt file by Excel and examine the various fields.
+In the command above, we specified three protocols, including RefGene annotation (a gene-based annotation), cytogenetic band annotation (a region-based annotation), and allele frequency in gnoMAD version 2.1.1 (a filter-based annotation). These three types of annotation are indicated as `g`, `r` and `f` in the -operation argument, respectively. We also specify that dots ('.') be used to indicate lack of information, so variants that are not observed in the database will have '.' as the annotation. The `-vcfinput` argument specifies that the input file is in VCF format.
+
+If you have Excel installed, you can open the `hg19_multianno.txt` file by Excel and examine the various tab-delimited fields.
 
 ### 2. Run ANNOVAR on an exome
 
@@ -87,7 +89,9 @@ Next, we want to download a VCF file and then run ANNOVAR on this file.
 
 ## Install Phen2Gene
 
-One need to install Phen2Gene using the command below. Please deactivate other conda environments if you are not in conda base.
+In the next exercise, we will use a software tool called Phen2Gene to prioritize genes based on clinical phenotypes of patients with Mendelian diseases.
+
+You need to install Phen2Gene using the command below. Please deactivate other conda environments if you are not in conda base.
 
 To make the tutorial easy, the users can just download the source code for Phen2Gene from the release:
 
@@ -95,13 +99,15 @@ To make the tutorial easy, the users can just download the source code for Phen2
 wget https://github.com/WGLab/Phen2Gene/archive/1.2.1.zip -O Phen2Gene.zip
 ```
 
-Then extract either with 7zip, WinRAR or
+Then extract the ZIP file and also rename the folder, run the command below (note that in Linux/MacOS, you can use `unzip` to unzip a file):
 
 ```
-unzip Phen2Gene.zip -d Phen2Gene
+tar -xvf Phen2Gene.zip
+mv Phen2Gene-1.2.1 Phen2Gene
+cd Phen2Gene
 ```
 
-If you are more experienced, and you want to download Phen2Gene from github, users can install git using the command below and git clone.
+If you are more experienced, and you want to download Phen2Gene from github, you can install git using the command below (if git is not yet available in your system) and git clone the Phen2Gene repository directly.
 ```
 conda install git
 git clone https://github.com/WGLab/Phen2Gene.git
@@ -122,7 +128,7 @@ If on `MacOS` or `Linux` run:
 ```
 bash setup.sh
 ```
-And the installation will be extremely easy for you.  The database and all will be downloaded and you can install P2G in your path.
+And the installation will be extremely easy for you.  The database and all will be downloaded and you can add Phen2Gene in your path.
 
 If on `Windows`:
 
@@ -130,10 +136,12 @@ If on `Windows`:
 wget https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip -O H2GKB.zip
 ```
 
-Then extract either with 7zip, WinRAR or
+Note that this file is over 1GB, so it may take a while depending on your Internet speed.
+
+Then extract the file:
 
 ```
-unzip H2GKB.zip -d H2GKB
+tar -xvf H2GKB.zip
 ```
 
 *We recommend extracting the file into lib for ease of use for this tutorial, but you can put the file wherever you want.*
