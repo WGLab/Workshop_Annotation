@@ -166,3 +166,18 @@ Run ANNOVAR on the VCF file:
 perl table_annovar.pl VCF_files/proband.vcf -buildver hg19 humandb -out proband.annovar -remove -protocol refGene,gnomad211_exome -operation g,f -nastring . -vcfinput
 ```
 
+#### *Now move `proband.annovar.hg19_multianno.txt` to the `Phen2Gene` folder!*
+
+We already have the HPO IDs for this patient in the `example` folder of `Phen2Gene` so just run:
+
+```
+python phen2gene.py -f example/ANKRD11_id.txt -w sk -out ankrd11
+```
+
+Now, let's use `awk`, one of Jim's favorite tools, to do some fancy filtering on gnomAD allele frequency (column 11, across 125,748 exomes).  We want rare variants (<1% freq.).
+
+```
+conda install gawk
+awk '$11 <= 0.01 || $11 == "."' FS="\t" proband.annovar.hg19_multianno.txt > filtered.proband.annovar.hg19_multianno.txt
+```
+
