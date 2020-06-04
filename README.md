@@ -86,6 +86,25 @@ If you have Excel installed, you can open the `hg19_multianno.txt` file by Excel
 
 Next, we want to download a VCF file and then run ANNOVAR on this file.
 
+In the `ANNOVAR` folder:
+
+```
+wget http://molecularcasestudies.cshlp.org/content/suppl/2016/10/11/mcs.a001131.DC1/Supp_File_2_KBG_family_Utah_VCF_files.zip -O Supp_File_2_KBG_family_Utah_VCF_files.zip
+```
+
+Next unzip the ZIP file (`unzip` in Mac/Linux can work). `Windows` users, just unzip here, and *rename folder to `VCF_files`*:
+
+```
+tar -xvf Supp_File_2_KBG_family_Utah_VCF_files.zip
+mv '.\File 2_KBG family Utah_VCF files\' VCF_files
+```
+
+Run ANNOVAR on the VCF file:
+```
+perl table_annovar.pl VCF_files/proband.vcf -buildver hg19 humandb -out proband.annovar -remove -protocol refGeneWithVer,gnomad211_exome -operation g,f -nastring . -vcfinput
+```
+
+The `proband.annovar.hg19_multianno.txt` file contains annotations for this exome.
 
 ## Install Phen2Gene
 
@@ -168,27 +187,7 @@ python phen2gene.py -m HP:0000021 HP:0000027 HP:0030905 HP:0010628 -out out/prio
 
 ### A real world use case of Phen2Gene using ANNOVAR
 
-We're going to get actual variants from a proband with developmental disease from a CSH Molecular Case Studies paper.
-
-So first we download it.
-
-In the `ANNOVAR` folder:
-
-```
-wget http://molecularcasestudies.cshlp.org/content/suppl/2016/10/11/mcs.a001131.DC1/Supp_File_2_KBG_family_Utah_VCF_files.zip -O Supp2.zip
-```
-
-Next unzip the ZIP file (`unzip` in Mac/Linux can work). `Windows` users, just unzip here, and *rename folder to `VCF_files`*:
-
-```
-tar -xvf Supp_File_2_KBG_family_Utah_VCF_files.zip
-mv '.\File 2_KBG family Utah_VCF files\' VCF_files
-```
-
-Run ANNOVAR on the VCF file:
-```
-perl table_annovar.pl VCF_files/proband.vcf -buildver hg19 humandb -out proband.annovar -remove -protocol refGeneWithVer,gnomad211_exome -operation g,f -nastring . -vcfinput
-```
+We will use the actual variants from exome sequencing on a proband with developmental disease from a CSH Molecular Case Studies paper. In the previous exercise we already generated annotation as `proband.annovar.hg19_multianno.txt` file.
 
 #### *Now move `proband.annovar.hg19_multianno.txt` to the `Phen2Gene` folder!*
 
