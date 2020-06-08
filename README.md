@@ -26,7 +26,7 @@ Since MacOS has built-in terminal and Linux-like enrivonment for executing comma
 
 # Basic Linux commands
 
-If you use Mac or Linux operating system, you already have terminal access and can run all basic Linux commands. If you use Windows, after installing Anaconda, you will interact with a Linux-like environment. If you have not used Linux commands before, you can follow one simple tutorial to learn some basic commands: https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners. Some of the basic commands that we will use in the exercise include `ls`, `pwd`, `cd`, `mv` and `wget`.
+If you use Mac or Linux operating system, you already have terminal access and can run all basic Linux commands. If you use Windows, after installing Anaconda, you will interact with a Linux-like environment. If you are not familiar with basic Linux commands, you can follow one simple tutorial to learn several commands: https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners. Some of the  commands that we will use in the exercise include `ls`, `pwd`, `cd`, `mv` and `wget`.
 
 # Installation of software tools and data sets
 
