@@ -22,8 +22,11 @@ Once installation is successful, you can click the lower left "Start" button in 
 
 
 ## MacOS
-Since MacOS has built-in terminal and Linux-like enrivonment for executing command-line software tools, in general you do not need any specific set up. However, you may want to install [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) to help manage dependencies and the computing environment. Basically you first download the Miniconda installer for macOS, then run `bash Miniconda3-latest-MacOSX-x86_64.sh`.
+Since MacOS has built-in terminal and Linux-like enrivonment for executing command-line software tools, in general you do not need any specific set up. However, you may want to install [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) to help manage dependencies and the computing environment. Basically you first download the Miniconda installer for macOS, then run `bash Miniconda3-latest-MacOSX-x86_64.sh`. Miniconda is a light version of Conda.
 
+# Basic Linux commands
+
+If you use Mac or Linux operating system, you already have terminal access and can run all basic Linux commands. If you use Windows, after installing Anaconda, you will interact with a Linux-like environment. If you have not used Linux commands before, you can follow one simple tutorial to learn some basic commands: https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners. Some of the basic commands that we will use in the exercise include `ls`, `pwd`, `cd`, `mv` and `wget`.
 
 # Installation of software tools and data sets
 
@@ -63,9 +66,9 @@ Now you can try switch back to the `base` environment (type `conda activate base
 
 ### 1. Install ANNOVAR
 
-Typically you will go to the [ANNOVAR website](http://annovar.openbioinformatics.org), fill in a registration form, and download the package there. For this exercise, we already prepared a ZIP file that contains a "compact" version of ANNOVAR and necessary library files, to make it easier for users. If you are using Windows, make sure to switch to the `annotation` environment first, and by default you will be at your home directory. To make it easier to manage files and directories, we can create a new directory, then enter this new directory (type `mkdir genomics_exercise` followed by `cd genomics_exercise`).
+Typically you will go to the [ANNOVAR website](http://annovar.openbioinformatics.org), fill in a registration form, and download the package there. For this exercise, we already prepared a ZIP file that contains a "compact" version of ANNOVAR and necessary library files, to make it easier for users. If you are using Windows, make sure to switch to the `annotation` environment first, and by default you will be at your home directory. To make it easier to manage files and directories, you can create a new directory, then enter this new directory (type `mkdir genomics_exercise` followed by `cd genomics_exercise`). To confirm which directory you are in, you can type `pwd`.
 
-Next, you can just download the ZIP file for this class by the command `wget -O exercise1.zip https://github.com/WGLab/Workshop_Annotation/releases/download/v1.0.0/exercise1.zip`. Because this file contains several annotation databases, its size is around 500Mb and it may take a while to download it. To unzip the file, you can dirctly using `tar -xvf exercise1.zip` to unzip the downladed file. You will see from the messages in screen that several files are extracted from the zip file.
+Next, you can just download the ZIP file for this class by the command `wget -O exercise1.zip https://github.com/WGLab/Workshop_Annotation/releases/download/v1.0.0/exercise1.zip`. The Linux command `wget` essentially downloads a file from a given URL and saves the file to your computer. Because this file contains several annotation databases, its size is around 500Mb and it may take a while to download it. To unzip the file, you can dirctly using `tar -xvf exercise1.zip` to unzip the downladed file. You will see from the messages in screen that several files are extracted from the zip file.
 
 ### 2. Run ANNOVAR on a small VCF file
 
