@@ -113,9 +113,9 @@ Suppose we sequenced a patient with COVID-19 and performed alignment, filtering,
 You can create a text file called `ex3.avinput` with the following mutations: 
 
 ```
-NC_045512v2     29095   29095   T       C
+NC_045512v2     29095   29095   C       T
 NC_045512v2     26144   26144   G       T
-NC_045512v2     28144   28144   C       T
+NC_045512v2     28144   28144   T       C
 ```
 
 This format is referred to as the avinput format, it is a simple tab or space delimited file, with each variant per line. The first five columns in each line represent chr, start, end, reference allele and alternative allele, respectively.
