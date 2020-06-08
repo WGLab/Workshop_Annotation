@@ -251,3 +251,11 @@ Then click Submit.
 ![image3](https://user-images.githubusercontent.com/6568964/84083616-fac7f200-a9af-11ea-97cd-68585539d7fe.png)
 
 You should see that ANKRD11 is in the top 3.  The reason it is not 2 as in the previous example is that we manually curated HPO terms from the patient notes for each patient in our Phen2Gene paper and this is raw notes with no curation done and all HPO terms are being automatically extracted by Doc2HPO.  Despite this, the discrepancy in our results is minimal.
+
+![image4](https://user-images.githubusercontent.com/6568964/84083649-0fa48580-a9b0-11ea-81ed-7d999f40eade.png)
+
+Alternatively, you can also submit the HPO terms from `example/ANKRD11.txt` manually using the tab `HPO IDs` (they are already the default terms in the website so you can just click `Submit` on that tab).
+
+![image5](https://user-images.githubusercontent.com/6568964/84083556-df5ce700-a9af-11ea-87c5-d02cc742b8c4.png)
+
+And you should see that ANKRD11 is still number 2.
