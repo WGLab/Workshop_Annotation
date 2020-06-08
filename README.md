@@ -22,7 +22,7 @@ Once installation is successful, you can click the lower left "Start" button in 
 
 
 ## MacOS
-Since MacOS has built-in terminal and Linux-like enrivonment for executing command-line software tools, in general you do not need any specific set up. However, you may want to install [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) to help manage dependencies and the computing environment.
+Since MacOS has built-in terminal and Linux-like enrivonment for executing command-line software tools, in general you do not need any specific set up. However, you may want to install [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) to help manage dependencies and the computing environment. Basically you first download the Miniconda installer for macOS, then run `bash Miniconda3-latest-MacOSX-x86_64.sh`.
 
 
 # Installation of software tools and data sets
@@ -86,7 +86,7 @@ If you have Excel installed, you can open the `hg19_multianno.txt` file by Excel
 
 Next, we want to download a VCF file and then run ANNOVAR on this file.
 
-In the `ANNOVAR` folder:
+In the `exercise1` folder:
 
 ```
 wget http://molecularcasestudies.cshlp.org/content/suppl/2016/10/11/mcs.a001131.DC1/Supp_File_2_KBG_family_Utah_VCF_files.zip -O Supp_File_2_KBG_family_Utah_VCF_files.zip
