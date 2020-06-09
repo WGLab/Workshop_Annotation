@@ -1,8 +1,8 @@
 # Introduction
-This repository contains the course materials for hands-on exercise session of the "Variants Annotate and Phenotype Analysis" workshop. 
+This repository contains the course materials for hands-on exercise of the "Variants Annotation and Phenotype Analysis" session in the Quantitative Genomics workshop at Columbia University on June 11-12, 2020.
 
 # Preparation of computing environment
-Both the lectures and hands-on exercises will be taught via video conference online. To ensure the cross-platform compatibility, we will only use tools that are developed in Perl and Python. As most users are using either Windows or MacOS in your personal computers, below we describe the preferred means to prepare computing environment using Conda. 
+Both the lectures and hands-on exercises will be taught via Zoom video conference online. To ensure the cross-platform compatibility, we will only use tools that are developed in Perl and Python. As most users are using either Windows or MacOS in your personal computers, below we describe the preferred means to prepare computing environment using Conda. 
 
 ## Windows
 For some users, Conda is not strictly required if you are already familiar with running command-line driven software tools in Windows via WSL or PowerShell and have Perl/Python pre-installed in your Windows computer. So if you are among this group of users, you can skip this step and go directly to the exercises.
@@ -58,7 +58,7 @@ You can do `conda install perl`, and press "y" when prompted. See image below.
 
 After installation, you can type `perl -v` to double check that Perl is indeed installed by the command above in the `annotation` environment. You should see a message like `This is perl 5, version 26, subversion 2 (v5.26.2) built for MSWin32-x64-multi-thread`.
 
-When using Windows, it is also highly recommended that you install the gzip-related tools (not required for this exercise itself, but useful if you want to explore more functionalities of ANNOVAR by downloading additing annotation packages). You can do `conda install -c msys2 m2-gzip` to install gzip.
+When using Windows, it is also highly recommended that you install the gzip-related tools (not required for this exercise itself, but can be useful if you want to explore more functionalities of ANNOVAR by downloading additional annotation packages). You can do `conda install -c msys2 m2-gzip` to install gzip.
 
 Now you can try switch back to the `base` environment (type `conda activate base` to do this), and type `perl -v`. You will see an error message now that this command is not recognized; in other words, Perl is only available in the `annotation` but not `base` environment. So this exercise shows how Conda manages software packages in an environment-dependent manner.
 
@@ -66,7 +66,7 @@ Now you can try switch back to the `base` environment (type `conda activate base
 
 ### 1. Install ANNOVAR
 
-Typically you will go to the [ANNOVAR website](http://annovar.openbioinformatics.org), fill in a registration form, and download the package there. For this exercise, we already prepared a ZIP file that contains a "compact" version of ANNOVAR and necessary library files, to make it easier for users. If you are using Windows, make sure to switch to the `annotation` environment first, and by default you will be at your home directory. To make it easier to manage files and directories, you can create a new directory, then enter this new directory (type `mkdir genomics_exercise` followed by `cd genomics_exercise`). To confirm which directory you are in, you can type `pwd`.
+Typically you will go to the [ANNOVAR website](http://annovar.openbioinformatics.org), fill in a registration form, and download the package there. For this exercise, we already prepared a ZIP file that contains a "compact" version of ANNOVAR and necessary library files, to make it easier for users. If you are using Windows, make sure to switch to the `annotation` environment first, and by default you will be at your home directory (you can type `pwd` to check this, which shows the current directory you are in). To make it easier to manage files and directories, you can create a new directory, then enter this new directory (type `mkdir genomics_exercise` followed by `cd genomics_exercise`). To confirm which directory you are in, you can type `pwd`.
 
 Next, you can just download the ZIP file for this class by the command `wget -O exercise1.zip https://github.com/WGLab/Workshop_Annotation/releases/download/v1.0.0/exercise1.zip`. The Linux command `wget` essentially downloads a file from a given URL and saves the file to your computer. Because this file contains several annotation databases, its size is around 500Mb and it may take a while to download it. To unzip the file, you can dirctly using `tar -xvf exercise1.zip` to unzip the downladed file. You will see from the messages in screen that several files are extracted from the zip file.
 
@@ -113,7 +113,7 @@ The `proband.annovar.hg19_multianno.txt` file contains annotations for this exom
 
 Suppose we sequenced a patient with COVID-19 and performed alignment, filtering, read assembly, and generate variant calls (the calls are generated by comparing to reference genome NC045512.2). We want to evaluate what effects that the virus mutations in this patient may have.
 
-We will use a text file called `ex3.avinput` with the following mutations: 
+You can prepare a simple text file called `ex3.avinput` with the following mutations: 
 
 ```
 NC_045512v2     29095   29095   C       T
@@ -121,7 +121,7 @@ NC_045512v2     26144   26144   G       T
 NC_045512v2     28144   28144   T       C
 ```
 
-This format is referred to as the avinput format, it is a simple tab or space delimited file, with each variant per line. The first five columns in each line represent chr, start, end, reference allele and alternative allele, respectively.
+This format is referred to as the avinput format, and it is a simple tab or space delimited file, with each variant per line. There can be many columns per line, but the first five columns in each line represent chr, start, end, reference allele and alternative allele, respectively.
 
 Then you can just run `perl annotate_variation.pl example/ex3.avinput sarscov2db/ -build NC_045512v2 -dbtype avGene -out ex3` to annotate these mutations. Examine the output file `ex3.exonic_variant_function` to see what proteins these mutations affect, and what amino acid changes that they cause.
 
@@ -238,7 +238,7 @@ Go to https://phen2gene.wglab.org.  Click on the tab `Patient notes`:
 
 ![image1](https://user-images.githubusercontent.com/6568964/84083556-df5ce700-a9af-11ea-87c5-d02cc742b8c4.png)
 
-and paste this in:
+and paste this paragraph of clinical notes in the text box:
 
 ```
 The proband had an abnormally large fontanelle, which resolved without treatment. The proband does not appear to have a sacral dimple. Other than the presence of flat arches, there are no obvious signs of foot abnormalities. The proband does not look like his other siblings, although there was a resemblance between him and his sister when they were the same age. Features of proband’s face can be seen, including bushy eyebrows, broad nasal tip, short philtrum, full lips and cupid bow of upper lip. Video of proband’s behavior. Proband is non-verbal, and hyperactive. He repetitively spins his toy. While playing, he gets up from his chair, walks a few steps, stomps his feet, and sits back down. Additional interview in August 2015, after the parents received the proband’s diagnosis of KBG syndrome. The proband develops new mannerisms every four to six months, the most recent being short, hard breaths through the nose and head turning. The proband has had a substantial decrease in the number of seizures after starting an Epidiolex (cannabidiol) treatment (70-80% decrease as described by the parents). The frequency of seizures increased after the proband fell and fractured his jaw.  The mother describes the proband’s macrodontia. Although the mother and several siblings have large teeth, the macrodontia in the proband does not appear in any other member of the family.  The proband’s features are compared to other characteristics usually found in other KBG patients. Unlike most KBG patients, the proband has full lips. Like most KBG patients, the proband has curved pinkies (diagnosed as clinodactyly), which are often found in KBG patients.  Although the proband has relatively short toes, this trait may have been inherited from the father. The proband also has curved toenails, which commonly appear in autistic children.
