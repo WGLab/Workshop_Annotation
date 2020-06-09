@@ -259,3 +259,5 @@ Alternatively, you can also submit the HPO terms from `example/ANKRD11.txt` manu
 ![image5](https://user-images.githubusercontent.com/6568964/84083556-df5ce700-a9af-11ea-87c5-d02cc742b8c4.png)
 
 And you should see that ANKRD11 is still number 2.
+
+![image6](https://user-images.githubusercontent.com/6568964/84211809-3afba300-aa8a-11ea-8674-89518b0f8576.png)
