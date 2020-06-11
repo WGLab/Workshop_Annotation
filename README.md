@@ -102,6 +102,8 @@ tar -xvf Supp_File_2_KBG_family_Utah_VCF_files.zip
 mv '.\File 2_KBG family Utah_VCF files\' VCF_files
 ```
 
+Note that if you use Mac/Linux, the command should be `mv './File 2_KBG family Utah_VCF files/' VCF_files`
+
 Run ANNOVAR on the VCF file:
 ```
 perl table_annovar.pl VCF_files/proband.vcf -buildver hg19 humandb -out proband.annovar -remove -protocol refGeneWithVer,gnomad211_exome -operation g,f -nastring . -vcfinput
