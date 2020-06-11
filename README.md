@@ -104,7 +104,7 @@ mv '.\File 2_KBG family Utah_VCF files\' VCF_files
 
 Run ANNOVAR on the VCF file:
 ```
-perl table_annovar.pl VCF_files/proband.vcf -buildver hg19 humandb -out proband -remove -protocol refGeneWithVer,gnomad211_exome -operation g,f -nastring . -vcfinput
+perl table_annovar.pl VCF_files/proband.vcf -buildver hg19 humandb -out proband.annovar -remove -protocol refGeneWithVer,gnomad211_exome -operation g,f -nastring . -vcfinput
 ```
 
 The `proband.annovar.hg19_multianno.txt` file contains annotations for this exome.
