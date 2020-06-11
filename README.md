@@ -125,7 +125,9 @@ NC_045512v2     28144   28144   T       C
 
 This format is referred to as the avinput format, and it is a simple tab or space delimited file, with each variant per line. There can be many columns per line, but the first five columns in each line represent chr, start, end, reference allele and alternative allele, respectively.
 
-Then you can just run `perl annotate_variation.pl example/ex3.avinput sarscov2db/ -build NC_045512v2 -dbtype avGene -out ex3` to annotate these mutations. Examine the output file `ex3.exonic_variant_function` to see what proteins these mutations affect, and what amino acid changes that they cause.
+Then you can just run `perl table_annovar.pl example/ex3.avinput sarscov2db -build NC_045512v2 -protocol avGene -operation g -out ex3` to annotate these mutations and the results will be stored in ex3.NC_045512v2_multianno.txt. 
+
+Alternatively, since you are using only one single type of annotation (gene-based annotation), you may also do `perl annotate_variation.pl example/ex3.avinput sarscov2db/ -build NC_045512v2 -dbtype avGene -out ex3` to annotate these mutations. Examine the output file `ex3.exonic_variant_function` to see what proteins these mutations affect, and what amino acid changes that they cause.
 
 
 ## Install Phen2Gene
