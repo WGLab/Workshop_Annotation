@@ -228,6 +228,8 @@ conda install gawk
 awk '$11 <= 0.01 || $11 == "."' FS="\t" proband.annovar.hg19_multianno.txt > filtered.proband.annovar.hg19_multianno.txt
 ```
 
+Some Windows users reported that the `conda install gawk` above does not work; if this applies to you, you can instead do `conda install m2-base` which will install many Unix-like tools including gawk.
+
 Now using a `python` script that we pre-wrote in the `example` folder, we can create a newly sorted list of genes from `Phen2Gene` based on the genes with rare variants present in the `ANNOVAR` output:
 
 ```
