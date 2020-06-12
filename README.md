@@ -139,7 +139,7 @@ You need to install Phen2Gene using the command below. Please deactivate other c
 To make the tutorial easy, the users can just download the source code for Phen2Gene from the release:
 
 ```
-wget https://github.com/WGLab/Phen2Gene/archive/1.2.1.zip -O Phen2Gene.zip
+wget https://github.com/WGLab/Phen2Gene/archive/1.2.2.zip -O Phen2Gene.zip
 ```
 
 Then extract the ZIP file and also rename the folder, run the command below (note that in Linux/MacOS, you can use `unzip` to unzip a file):
